@@ -2,20 +2,20 @@ let gameComplete = false;
 // Define the three constants here
 const name = "unknown";
 const score = 0;
-const items = 0
+const items = 0;
 
 // Define the player object here
 let player = {
   name,
   score,
   items,
-  getCurrentScore() {
-    return this.score;
+  getCurrentScore() { 
+    return this.score 
   },
   addPoints(points) {
     this.score += points;
   },
-  subtractPoints(points) {
+  deductPoints(points) {
     this.score -= points;
   }
 };
@@ -29,7 +29,13 @@ function Product(id, name, price, expiryDate) {
 }
 
 // Complete the dateDiff function
-const dateDiff = (date1, date2) => {};
+const dateDiff = (date1, date2) => {
+  // This calculates the difference in time in milliseconds since January 1, 1970, 00:00:00 UTC.
+  let num_of_secs = Math.abs(date1.getTime() - date2.getTime());
+  // This is used to convert the time in milliseconds to days
+  let conv_factor = 1000 * 86400;
+  return (num_of_secs / conv_factor);
+};
 
 // Here, use Object.defineProperty to create property - daysToExpire
 
